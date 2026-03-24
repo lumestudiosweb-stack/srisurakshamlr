@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Suraksha Dental Clinic | Dr. Vinay Kumar & Dr. Akshata Rao</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-pure: #DCC3AC; 
+            --bg-dark: #000000;
+            --text-main: #000000;
+            --accent-white: #ffffff; 
+            --radius-lg: 32px;
+            --radius-sm: 16px;
+            --lume-purple: #800080;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--text-main);
+            line-height: 1.3;
+            overflow-x: hidden; 
+            width: 100%;
+            padding-bottom: 80px; 
+        }
+
+        .container { 
+            max-width: 1300px; 
+            margin: 0 auto; 
+            padding: 0 5%; 
+            width: 100%;
+        }
+        
+        section { padding: 80px 0; }
+
+        h1 { 
+            font-size: clamp(42px, 9vw, 110px); 
+            font-weight: 900; 
+            line-height: 0.9; 
+            letter-spacing: -3px; 
+            margin-bottom: 30px; 
+        }
+        
+        h2 { font-size: clamp(32px, 6vw, 70px); font-weight: 900; letter-spacing: -2px; margin-bottom: 40px; }
+        
+        p { font-size: 18px; color: var(--text-main); font-weight: 500; }
+
+        .btn {
+            padding: 20px 40px;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            font-size: 16px;
+            text-align: center;
+            border: 2px solid var(--bg-dark);
+            cursor: pointer;
+        }
+        .btn-black { background: var(--bg-dark); color: white; }
+        .btn-white { background: var(--accent-white); color: var(--bg-dark); border: 2px solid var(--bg-dark); }
+
+        header {
+            padding: 20px 0;
+            background: rgba(220, 195, 172, 0.8);
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+            border-bottom: 1px solid var(--bg-dark);
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 900; letter-spacing: -1.5px; text-transform: uppercase; }
+        .pc-nav a { margin-left: 35px; text-decoration: none; color: var(--text-main); font-weight: 700; font-size: 14px; }
+
+        .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 40px; padding-top: 40px; }
+        .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+        
+        /* LOGO STYLES */
+        .main-shape {
+            width: 450px; height: 450px; 
+            display: flex; align-items: center; justify-content: center;
+            animation: float 6s ease-in-out infinite;
+        }
+        .logo-tri-container { display: flex; align-items: center; justify-content: center; }
+        .logo-circle {
+            width: 140px; height: 140px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            border: 3px solid #000; margin: 0 -15px; font-size: 60px; color: white;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+        }
+        .c-orange { background-color: #E8B059; z-index: 1; }
+        .c-teal { background-color: #4FB0A4; z-index: 2; }
+        .c-pink { background-color: #E65A6E; z-index: 3; }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+        /* GALLERY STYLE */
+        .bio-section { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
+        .gallery-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .gallery-img { 
+            border: 2.5px solid var(--bg-dark); border-radius: 20px; 
+            overflow: hidden; background: white; box-shadow: 8px 8px 0px var(--bg-dark);
+        }
+        .gallery-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .img-doc { grid-column: span 1; max-width: 180px; justify-self: center; } 
+        .img-landscape { grid-column: span 2; }
+
+        .bio-quote { font-size: 22px; font-weight: 800; margin: 25px 0; border-left: 6px solid var(--bg-dark); padding-left: 20px; font-style: italic; }
+
+        /* SPECIALTIES GRID */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .service-card {
+            background: var(--accent-white); border: 2.5px solid var(--bg-dark); padding: 30px;
+            border-radius: var(--radius-lg); transition: 0.4s;
+        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 10px 10px 0px var(--bg-dark); }
+        .service-card i { font-size: 32px; margin-bottom: 20px; color: var(--bg-dark); }
+
+        /* TESTIMONIALS STYLE */
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
+        .testimonial-card {
+            background: var(--accent-white); border: 2.5px solid var(--bg-dark); padding: 30px;
+            border-radius: var(--radius-lg); display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .testimonial-card p { font-style: italic; font-size: 16px; margin-bottom: 20px; color: #333; }
+        .testimonial-card .author { font-weight: 900; text-transform: uppercase; font-size: 14px; }
+        .testimonial-card .role { font-size: 12px; color: #666; font-weight: 700; margin-top: 4px; }
+
+        /* FAQ STYLE */
+        .faq-box {
+            background: var(--accent-white); border: 2.5px solid #000;
+            border-radius: 20px; padding: 25px 35px; margin-bottom: 15px;
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 900px; margin-left: auto; margin-right: auto;
+        }
+        .faq-box h4 { font-size: 20px; font-weight: 900; }
+        .faq-box .plus { color: #0066FF; font-size: 24px; font-weight: 900; }
+
+        /* APPOINTMENT FORM */
+        .appointment-wrapper { 
+            background: var(--bg-dark); color: white; padding: 60px; 
+            border-radius: var(--radius-lg); display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; 
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+        input, select, textarea { 
+            width: 100%; padding: 20px; background: #111; border: 1px solid #333; 
+            border-radius: 12px; color: white; font-size: 16px; outline: none;
+        }
+        input::placeholder, textarea::placeholder { color: #666; }
+
+        footer { padding: 60px 0 40px; border-top: 2.5px solid var(--bg-dark); margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; } 
+
+        @media (max-width: 1024px) {
+            .hero, .bio-section, .appointment-wrapper, .footer-grid { grid-template-columns: 1fr; }
+            .pc-nav { display: none; }
+            .form-row { grid-template-columns: 1fr; }
+            .img-doc { max-width: 150px; }
+            .logo-circle { width: 100px; height: 100px; font-size: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-content">
+            <div class="logo">Sri Suraksha</div>
+            <nav class="pc-nav">
+                <a href="#services">Specialties</a>
+                <a href="#about">Doctors</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#faq">FAQ</a>
+                <a href="#book">Appointment</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <div>
+                <h1>Gentle Care,<br>Better Smiles.</h1>
+                <p>Advanced dental solutions by Dr. Vinay Kumar & Dr. Akshata Rao. Experience hygienic, affordable, and painless treatments in Kulshekar, Mangaluru.</p>
+                <div style="display: flex; gap: 15px; margin-top: 40px;">
+                    <a href="#book" class="btn btn-black">Book Appointment</a>
+                    <a href="#services" class="btn btn-white">Specialties Page</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="main-shape">
+                    <div class="logo-tri-container">
+                        <div class="logo-circle c-orange"><i class="fas fa-tooth"></i></div>
+                        <div class="logo-circle c-teal"><i class="fas fa-tooth"></i></div>
+                        <div class="logo-circle c-pink"><i class="fas fa-tooth"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT & GALLERY SECTION -->
+        <section id="about" class="bio-section">
+            <div class="gallery-wrapper">
+                <div class="gallery-img img-doc">
+                    <img src="https://ik.imagekit.io/bg67m7hde/WhatsApp%20Image%202026-03-23%20at%205.34.22%20PM.jpeg" alt="Dr. Vinay Kumar">
+                </div>
+                <div class="gallery-img">
+                    <img src="https://ik.imagekit.io/bg67m7hde/WhatsApp%20Image%202026-03-23%20at%205.34.22%20PM%20(1).jpeg" alt="Clinic Interior">
+                </div>
+                <div class="gallery-img img-landscape">
+                    <img src="https://ik.imagekit.io/bg67m7hde/WhatsApp%20Image%202026-03-23%20at%2011.29.54%20PM.jpeg" alt="Clinic Landscape">
+                </div>
+            </div>
+            <div>
+                <h2 style="margin-top: 10px;">Our Experts</h2>
+                <div class="bio-quote">"A thorough diagnosis and quick, hygienic treatment is our promise."</div>
+                <p style="margin-bottom: 20px;"><strong>Dr. Vinay Kumar</strong> brings over 16 years of experience in clinical dentistry, known for his conversational approach and thorough diagnosis. He believes that the foundation of great dental work lies in understanding the patient's concerns first.</p>
+                <p style="margin-bottom: 20px;"><strong>Dr. Akshata Rao</strong> (MDS), NITTE University, specializes in advanced treatments ensuring high aesthetic and functional results. Together, they are committed to providing a stress-free experience using the latest pain-management techniques.</p>
+                <p>Our clinic is built on the philosophy of personalized care—treating every patient like family with conservative and effective dental solutions.</p>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services">
+            <h2 style="text-align: center;">Specialties</h2>
+            <div class="services-grid">
+                <div class="service-card"><i class="fas fa-notes-medical"></i><h3>Check-ups</h3><p>Thorough evaluation with X-rays and intra oral camera for better diagnosis.</p></div>
+                <div class="service-card"><i class="fas fa-broom"></i><h3>Oral Prophylaxis (Scaling)</h3><p>Professional cleaning and hygiene maintenance.</p></div>
+                <div class="service-card"><i class="fas fa-smile-wink"></i><h3>Orthodontics + Invisalign</h3><p>If you don’t like braces you can go with Invisalign.</p></div>
+                <div class="service-card"><i class="fas fa-heartbeat"></i><h3>Root Canal</h3><p>Saving natural teeth with pain-managed RCT procedures.</p></div>
+                <div class="service-card"><i class="fas fa-crown"></i><h3>Crowns & Bridges</h3><p>High-quality restorative solutions for functionality.</p></div>
+                <div class="service-card"><i class="fas fa-child"></i><h3>Pediatric Dentistry</h3><p>Gentle and specialized dental care for children.</p></div>
+                <div class="service-card"><i class="fas fa-user-md"></i><h3>Implants</h3><p>Durable replacement for missing teeth using high-quality implants.</p></div>
+                <div class="service-card"><i class="fas fa-x-ray"></i><h3>X-ray Facilities</h3><p>In-house digital tools for immediate and accurate diagnosis.</p></div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section id="testimonials">
+            <h2 style="text-align: center;">Patient Stories</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"Excellent service. Skilled doctor. Makes you comfortable with conversation."</p>
+                    <div>
+                        <div class="author">Suresh P K</div>
+                        <div class="role">Local Guide</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"On the recommendation of my sister, I visited Dr Vinay Kumar... The doctor did a thorough check and did an amazing job fixing all issues. The clinic is hygienically clean, treatment is quick."</p>
+                    <div>
+                        <div class="author">Ivan Lobo</div>
+                        <div class="role">Patient</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Good and affordable treatment."</p>
+                    <div>
+                        <div class="author">Geethu Venugopal</div>
+                        <div class="role">Patient</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section id="faq">
+            <h1 style="text-align: center; margin-bottom: 60px;">Mangalore Dental FAQ</h1>
+            <div class="faq-box"><h4>Is a dental checkup painful?</h4> <span class="plus">+</span></div>
+            <div class="faq-box"><h4>How often should I visit the dentist?</h4> <span class="plus">+</span></div>
+            <div class="faq-box"><h4>Do you offer teeth whitening treatments?</h4> <span class="plus">+</span></div>
+            <div class="faq-box"><h4>How long do dental implants last?</h4> <span class="plus">+</span></div>
+            <div class="faq-box"><h4>What should I do in a dental emergency?</h4> <span class="plus">+</span></div>
+        </section>
+
+        <!-- LOCATION SECTION -->
+        <section id="location">
+            <h2 style="text-align: center;">Find Us</h2>
+            <p style="text-align: center; margin-bottom: 20px; font-weight: 700;">Behind Praffula Medicals, kalpane, kulshekar, Mangalore. 575005</p>
+            <div style="width:100%; border: 2.5px solid #000; border-radius: 14px; overflow: hidden; margin-bottom: 15px;">
+                <iframe width="100%" height="400" frameborder="0" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=sri%20suraksha%20Mangalore+(sri%20suraksha)&amp;t=h&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+            </div>
+            <p style="text-align: center; font-size: 14px; color: #444;">Behind Praffula Medicals, kalpane, kulshekar, Mangalore. 575005</p>
+        </section>
+
+        <!-- APPOINTMENT SECTION -->
+        <section id="book">
+            <div class="appointment-wrapper">
+                <div>
+                    <h2 style="color: white;">Book Your Slot.</h2>
+                    <p style="color: #ccc; margin-top: 30px;">Request an appointment via WhatsApp instantly.</p>
+                </div>
+                <div>
+                    <form>
+                        <div class="form-row">
+                            <input type="text" id="name" placeholder="Full Name" required>
+                            <input type="tel" id="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-row">
+                            <select id="service" required>
+                                <option value="">Select Service</option>
+                                <option>Oral Prophylaxis</option>
+                                <option>Invisalign / Braces</option>
+                                <option>Pediatric Care</option>
+                                <option>Consultation</option>
+                            </select>
+                            <input type="date" id="date" required>
+                        </div>
+                        <textarea id="message" rows="4" placeholder="How can we help?"></textarea>
+                        <button type="button" onclick="sendToWA()" class="btn btn-white" style="width: 100%;">Book via WhatsApp →</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER SECTION -->
+        <footer>
+            <div class="footer-grid">
+                <div>
+                    <div class="logo">Sri Suraksha</div>
+                    <p style="margin-top: 20px;">Quality dental healthcare by Dr. Vinay Kumar & Dr. Akshata Rao.</p>
+                </div>
+                <div>
+                    <h4>Visit</h4>
+                    <p>Behind Praffula Medicals</p>
+                    <p>kalpane, kulshekar, Mangalore. 575005</p>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <p>099456 34593</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 60px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 20px;">
+                <p style="font-size: 14px; font-weight: 700; margin-bottom: 5px;">© 2026 Sri Suraksha Dental Clinic.</p>
+                <p style="font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Powered by <span style="color: var(--lume-purple);">LuMe Studios</span></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function sendToWA() {
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            if(!name || !service) { alert("Please fill the form."); return; }
+            const msg = `Sri Suraksha Booking Request%0A%0APatient: ${name}%0AService: ${service}`;
+            window.open(`https://wa.me/919945634593?text=${msg}`, '_blank');
+        }
+    </script>
+</body>
+</html>
