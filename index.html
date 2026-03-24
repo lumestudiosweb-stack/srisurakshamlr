@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dr. Priyanka Singh | Specialist Physical Therapist Mangalore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-pure: #ffffff;
+            --bg-sand: #fdf6e3; 
+            --bg-dark: #000000;
+            --accent-gold: #b08d57;
+            --accent-blue: #0066FF; 
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --radius-lg: 32px;
+            --radius-sm: 16px;
+            --shadow-bold: 10px 10px 0px #000;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--bg-pure); color: var(--text-main); line-height: 1.4; overflow-x: hidden; padding-bottom: 80px; }
+
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+        section { padding: 80px 0; border-bottom: 1px solid #eee; }
+
+        h1 { font-size: clamp(40px, 8vw, 95px); font-weight: 900; line-height: 0.9; letter-spacing: -4px; margin-bottom: 25px; }
+        h2 { font-size: clamp(32px, 5vw, 60px); font-weight: 900; letter-spacing: -3px; margin-bottom: 30px; }
+        h3 { font-size: 24px; font-weight: 900; margin-bottom: 15px; text-transform: uppercase; }
+        p { font-size: 18px; color: var(--text-muted); font-weight: 500; }
+        .highlight { color: var(--accent-gold); }
+
+        .btn {
+            padding: 20px 40px; border-radius: var(--radius-sm); font-weight: 700;
+            text-decoration: none; display: inline-block; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            font-size: 16px; text-align: center; border: none; cursor: pointer;
+        }
+        .btn-black { background: var(--bg-dark); color: white; }
+        .btn-black:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .btn-outline { border: 2.5px solid var(--bg-dark); color: var(--bg-dark); background: transparent; }
+
+        header {
+            padding: 25px 0; background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px); position: sticky; top: 0; z-index: 2000;
+            border-bottom: 1px solid #eee;
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 900; letter-spacing: -1.5px; text-transform: uppercase; }
+        .pc-nav a { margin-left: 30px; text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 13px; }
+        .pc-nav a:hover { color: var(--accent-gold); }
+
+        .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 60px; padding-top: 40px; }
+        .hero-img-wrapper {
+            position: relative; border: 3px solid #000; border-radius: var(--radius-lg);
+            overflow: hidden; box-shadow: var(--shadow-bold); background: var(--bg-sand);
+        }
+        .hero-img-wrapper img { width: 100%; display: block; filter: contrast(1.05); }
+
+        .how-works { background: var(--bg-sand); border: 2.5px solid #000; border-radius: var(--radius-lg); padding: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0; }
+        .how-card { border-left: 4px solid var(--accent-gold); padding-left: 25px; }
+        .how-card h4 { font-size: 22px; font-weight: 900; margin-bottom: 10px; }
+
+        .bio-text { font-size: 20px; line-height: 1.6; font-weight: 500; color: #333; }
+        .motto { font-size: 28px; font-weight: 900; font-style: italic; color: var(--accent-gold); margin: 30px 0; border-left: 8px solid #000; padding-left: 20px; }
+
+        .services-list { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .service-item { background: #fff; border: 2.5px solid #000; padding: 30px; border-radius: var(--radius-sm); transition: 0.3s; }
+        .service-item:hover { box-shadow: 8px 8px 0px #000; transform: translate(-4px, -4px); }
+        .service-number { background: #000; color: #fff; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 900; margin-bottom: 15px; }
+
+        .info-block { background: #e0f2f1; border: 2.5px solid #000; padding: 40px; border-radius: var(--radius-lg); margin-top: 40px; }
+        
+        .woman-acronym { text-align: center; background: #fff; border: 2.5px solid #000; padding: 40px; border-radius: var(--radius-lg); margin: 40px 0; }
+        .woman-acronym div { font-size: 32px; font-weight: 900; line-height: 1.2; }
+        .letter { color: #d63384; font-size: 40px; }
+
+        .query-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .query-card { border: 2px solid #000; padding: 25px; border-radius: var(--radius-sm); background: #fafafa; position: relative; }
+        .query-card h5 { font-size: 18px; font-weight: 900; margin-bottom: 10px; color: #d63384; }
+        .query-card p { font-size: 15px; }
+
+        .plan-visit-wrapper {
+            background: #000; color: #fff; padding: 80px 60px; border-radius: var(--radius-lg);
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: flex-start;
+        }
+        .plan-visit-wrapper h2 { font-size: 80px; line-height: 0.9; margin-bottom: 20px; color: white; letter-spacing: -4px; border:none; }
+        .plan-visit-wrapper p { color: #888; font-size: 20px; }
+        
+        .visit-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .visit-form-grid input, .visit-form-grid select, .visit-form-grid textarea {
+            background: #111; border: 1px solid #333; color: white; padding: 20px;
+            border-radius: 12px; width: 100%; font-size: 16px;
+        }
+        .visit-form-grid textarea { grid-column: span 2; }
+        .btn-blue {
+            background: #0066FF; color: white; width: 100%; padding: 20px;
+            border-radius: 12px; font-weight: 800; border: none; font-size: 18px;
+            cursor: pointer; grid-column: span 2; margin-top: 10px;
+        }
+
+        .map-section { height: 450px; border: 2.5px solid #000; border-radius: var(--radius-lg); overflow: hidden; margin-top: 40px; }
+
+        .mobile-bar {
+            position: fixed; bottom: 20px; left: 5%; right: 5%; z-index: 5000;
+            display: none; gap: 10px;
+        }
+        .mobile-bar .btn { flex: 1; box-shadow: 0 10px 30px rgba(0,0,0,0.2); border-radius: 100px; padding: 15px; font-size: 14px; }
+
+        /* Mobile Sidebar */
+        .mob-hamburger { display: none; background: none; border: none; cursor: pointer; font-size: 24px; padding: 5px; color: #1a1a1a; }
+        .sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 3000; }
+        .sidebar-overlay.open { display: block; }
+        .sidebar-drawer {
+            position: fixed; top: 0; left: -290px; width: 270px; height: 100%;
+            background: #fff; z-index: 4000; padding: 25px 25px 40px;
+            transition: left 0.3s ease; overflow-y: auto;
+            border-right: 2.5px solid #000; box-shadow: 5px 0 20px rgba(0,0,0,0.15);
+        }
+        .sidebar-drawer.open { left: 0; }
+        .sidebar-close { font-size: 22px; cursor: pointer; border: none; background: none; float: right; margin-top: 2px; }
+        .sidebar-logo { font-size: 16px; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; }
+        .sidebar-drawer nav { margin-top: 50px; display: flex; flex-direction: column; }
+        .sidebar-drawer nav a {
+            display: block; padding: 15px 0; font-weight: 700; font-size: 16px;
+            text-decoration: none; color: #1a1a1a; border-bottom: 1px solid #eee;
+        }
+        .sidebar-drawer nav a:active { color: #d63384; }
+        .sidebar-wa {
+            display: block; margin-top: 30px; background: #25D366; color: white;
+            text-align: center; padding: 16px; border-radius: 100px;
+            font-weight: 800; text-decoration: none; font-size: 15px;
+        }
+
+        @media (max-width: 1024px) {
+            .hero, .how-works, .services-list, .plan-visit-wrapper { grid-template-columns: 1fr; }
+            .visit-form-grid { grid-template-columns: 1fr; }
+            .visit-form-grid textarea, .btn-blue { grid-column: span 1; }
+            .visit-form-grid input, .visit-form-grid select, .visit-form-grid textarea { max-width: 100%; }
+            .visit-form-grid input[type="date"] { width: 100%; overflow: hidden; padding: 12px 15px; font-size: 14px; }
+            .visit-form-grid { overflow: hidden; }
+            .pc-nav { display: none; }
+            .mob-hamburger { display: block; }
+            .mobile-bar { display: flex; }
+            .hero-img-wrapper { order: -1; }
+            .plan-visit-wrapper h2 { font-size: 60px; }
+            .plan-visit-wrapper { padding: 40px 25px; }
+            .myth-fact-grid { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+    <div class="sidebar-drawer" id="sidebarDrawer">
+        <span class="sidebar-logo">Dr. Priyanka Singh</span>
+        <button class="sidebar-close" onclick="closeSidebar()">&#10005;</button>
+        <nav>
+            <a href="#about" onclick="closeSidebar()">About</a>
+            <a href="#services" onclick="closeSidebar()">Services</a>
+            <a href="#infertility" onclick="closeSidebar()">Infertility Care</a>
+            <a href="#queries" onclick="closeSidebar()">Conditions</a>
+            <a href="#menopause" onclick="closeSidebar()">Menopause & Bone Health</a>
+            <a href="#location" onclick="closeSidebar()">Location</a>
+            <a href="#book" onclick="closeSidebar()">Book Appointment</a>
+        </nav>
+        <a href="https://wa.me/919019457655" class="sidebar-wa"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    </div>
+
+    <div class="mobile-bar">
+        <a href="tel:9019457655" class="btn btn-outline" style="background: white;"><i class="fas fa-phone"></i> Call Now</a>
+        <a href="#book" class="btn btn-black" style="background: #0066FF; border:none;"><i class="fas fa-calendar-check"></i> Appointment</a>
+    </div>
+
+    <header>
+        <div class="container nav-content">
+            <div class="logo">Dr. Priyanka Singh</div>
+            <nav class="pc-nav">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#infertility">Infertility Care</a>
+                <a href="#queries">Conditions</a>
+                <a href="#book">Appointment</a>
+            </nav>
+            <button class="mob-hamburger" onclick="openSidebar()"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section class="hero">
+            <div>
+                <h1>Innovative Care<br><span class="highlight">By the Woman, For the Women.</span></h1>
+                <p style="margin: 25px 0; font-size: 22px; color: #333;">Specialist Physical Therapist with 15+ years of experience helping women stay moving and improve their quality of life.</p>
+                <div style="display: flex; gap: 15px; margin-top: 40px;">
+                    <a href="#book" class="btn btn-black">Plan Your Visit</a>
+                    <a href="#services" class="btn btn-outline">Our Services →</a>
+                </div>
+            </div>
+            <div class="hero-img-wrapper">
+                <img src="https://ik.imagekit.io/bg67m7hde/WhatsApp%20Image%202026-03-17%20at%2012.37.24%20PM.jpeg?updatedAt=1773744250385" alt="Dr. Priyanka Singh">
+            </div>
+        </section>
+
+        <section id="how">
+            <h2>How does it <span class="highlight">work?</span></h2>
+            <div class="how-works">
+                <div class="how-card">
+                    <h4>Evaluation</h4>
+                    <p>Dr. Priyanka will do the detail comprehensive assessment to find right treatment path for you.</p>
+                </div>
+                <div class="how-card">
+                    <h4>Personalized Treatment</h4>
+                    <p>An individualized treatment program will be developed, that includes Diet plan, Exercises, Life style modification and follow-ups as needed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="bio-text">
+                <p><strong>Dr. Priyanka Singh (PT)</strong> is a specialist physical therapist, having more than <strong>15 years of experience</strong>. She offers an innovative approach for women’s health through her scientifically researched ways of physiotherapy. She provides treatment with confidentiality in a peaceful and supportive environment for women.</p>
+                <br>
+                <p>She provides one-on-one care and customized individually tailored treatment program with lifestyle modifications. It’s a specialty clinic for various women’s health problems to improve their quality of life by thoroughly evaluating and treating conditions that specifically affect women.</p>
+                
+                <div class="motto">"Her motto is women’s health ‘by the woman and for the women.’"</div>
+                
+                <p>She does advance care for women who struggle with infertility, irregular menstruation, PCOS/PCOD, postpartum depression, or Menopause problems through Exercise and Life style changes. She designs treatment plans for each woman's needs, challenges, and goals based on recent evidence through research. She works with women of all ages and abilities to help you stay moving.</p>
+                <br>
+                <p><em>“My regular treatment can benefit your Physical, Mental, and Social health. It also prevents many chronic disorders and improves conditions such as Obesity, Diabetes, Hypertension, Depression, and Cancers,”</em> she says.</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2 style="text-align: center; margin-bottom: 50px;">Services <span class="highlight">Highlights</span></h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-number">1</div>
+                    <h3>Pregnancy care</h3>
+                    <p>Antenatal exercises : specific exercise program for gestational diabetes mellitus (GDM), symphysis pubis dysfunction (SPD), neck pain or lower back pain, sacroiliac joint pain.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">2</div>
+                    <h3>Postpartum complications</h3>
+                    <p>Obstetrical low back pain, sciatica, diastasis recti.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">3</div>
+                    <h3>Postnatal care</h3>
+                    <p>Individually tailored weight loss exercise program, strengthening of weakened core muscles as well as patient dietary and behavioral education. Treatment of postpartum depression and anxiety.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">4</div>
+                    <h3>Urinary incontinence</h3>
+                    <p>Professional treatment for bladder control and urinary leakage problems.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">5</div>
+                    <h3>Pelvic floor dysfunction</h3>
+                    <p>Exercises and treatments for problems related to pelvic floor muscles and support.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">6</div>
+                    <h3>Pre-Post surgical care</h3>
+                    <p>Specific Exercise Program to improve Quality of Life after surgical procedures like: hysterectomy, cesarean, episiotomy, prolapse repair, cystectomy, salpingectomy, myomectomy etc.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">7</div>
+                    <h3>Infertility</h3>
+                    <p>Customized exercise program with Lifestyle Modification for problems like Hormonal imbalance, Irregular mensuration, Excessive muscle cramps, Infertility due to PCOD/PCOS, Thyroid dysfunction.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">8</div>
+                    <h3>Peri or Post menopause</h3>
+                    <p>Specific exercise program for osteoporosis, balance and flexibility by providing age appropriate strengthening exercises and muscle awareness activities.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">9</div>
+                    <h3>Cancer Survivor Rehab</h3>
+                    <p>Rehabilitation programs specifically designed to improve the quality of life for cancer survivors.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-number">10</div>
+                    <h3>Mental Wellness</h3>
+                    <p>Stress/Depression/Anxiety treatment: - Stress management program.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="infertility">
+            <h2>Understanding <span class="highlight">Infertility</span></h2>
+            <div class="info-block" style="background: #fff;">
+                <h3>What is Infertility and Why it happens in Women?</h3>
+                <p>Infertility means having difficulty conceiving after one year of trying to get pregnant or women who can get pregnant but are unable to. Women's problems cause about one-third of infertility cases.</p>
+                <br>
+                <p>It can be due to problems with ovulation and signs that a woman is not ovulating normally, including irregular or absent menstrual periods. It can be due to PCOS, which is the most common cause. Primary ovarian insufficiency (POI) is another cause of ovulation problems. Other causes are blocked fallopian or surgery for an ectopic pregnancy, uterine fibroids, irregular periods or very painful periods, endometriosis, more than one miscarriage, or no periods.</p>
+            </div>
+
+            <div class="info-block">
+                <h3>How does my treatment help with infertility in women?</h3>
+                <p>Majority of the problems are due to obesity or overweight and reproductive hormonal changes. It has been proven by many research that consistent exercise and weight loss can be helpful in regulating your reproductive hormones. This includes inducing ovulation and regulating your periods.</p>
+                <br>
+                <p>Even small weight loss can be effective in helping their periods more regular and that will allow you to predict ovulation and make it easier to conceive. Structured exercises have been already shown to improve fertility in women with PCOS. It will help boost women's natural fertility without any side effects.</p>
+            </div>
+        </section>
+
+        <section id="queries">
+            <h2 style="text-align: center;">Conditions <span class="highlight">We Treat</span></h2>
+            <div class="query-grid">
+                <div class="query-card"><h5>Arthritis of Knee?</h5><p>Do you have Arthritis of Knee? Do you have pain and difficulty in walking or climbing stairs?</p></div>
+                <div class="query-card"><h5>Pregnant &amp; Diabetes?</h5><p>Are you Pregnant and having Diabetes? Are you looking for an effective Exercises?</p></div>
+                <div class="query-card"><h5>Pregnancy Exercises?</h5><p>Are you Pregnant and want to do the exercises which are suitable for your body?</p></div>
+                <div class="query-card"><h5>Diastasis Recti?</h5><p>Do you have Diastasis Recti after delivery? Are you looking for effective Exercises?</p></div>
+                <div class="query-card"><h5>Osteoporosis / Osteopenia?</h5><p>Do you have Osteoporosis or Osteopenia due to Menopause? Are you looking for customize exercises for Osteoporosis?</p></div>
+                <div class="query-card"><h5>Menopause?</h5><p>Are you at Menopause? Do you want to improve your muscles and bone strength?</p></div>
+                <div class="query-card"><h5>Pregnancy?</h5><p>Are you someone who is Pregnant and looking for correct Exercises which is suitable for your body during Pregnancy?</p></div>
+                <div class="query-card"><h5>Vertigo?</h5><p>Do you have Vertigo? Are you looking for Rehabilitation Exercises for Vertigo?</p></div>
+                <div class="query-card"><h5>Frozen Shoulder?</h5><p>Are you suffering from Shoulder Pain and Stiffness? Are you looking for effective exercises for Frozen shoulder?</p></div>
+                <div class="query-card"><h5>Home Care Services?</h5><p>Are you looking for Physiotherapy Home Care Services? Do you want quality of physiotherapy treatment for Home?</p></div>
+                <div class="query-card"><h5>Low Mood After Delivery?</h5><p>Are you someone who has Low mood, Fatigue and Feeling dull after Delivery?</p></div>
+                <div class="query-card"><h5>Pelvic Floor / Urinary Leakage?</h5><p>Do you want to strengthen your Pelvic floor muscles? Are you going through Urinary leakage problem?</p></div>
+                <div class="query-card"><h5>Lifestyle Changes?</h5><p>Are you looking for healthy Lifestyle Changes? Do you want customized Lifestyle changes?</p></div>
+                <div class="query-card"><h5>Post-Surgical Care?</h5><p>Are you someone who has undergone an operation for uterus, ovary or cyst removal?</p></div>
+                <div class="query-card"><h5>Brachial Neuritis?</h5><p>Are you suffering from Brachial Neuritis? Do you have severe shoulder and arm pain and want to know the effective treatment?</p></div>
+                <div class="query-card"><h5>Diabetes?</h5><p>Are you someone who has just been diagnosed with Diabetes and wanted to know the correct and effective Exercises for Blood Sugar Control?</p></div>
+                <div class="query-card"><h5>Sacroiliitis?</h5><p>Are you suffering from Sacroiliitis? Do you have pain while sitting and walking?</p></div>
+                <div class="query-card"><h5>Tail Bone Pain?</h5><p>Do you have Tail Bone Pain? Are you looking for effective treatment?</p></div>
+                <div class="query-card"><h5>PCOS or PCOD?</h5><p>Do you have PCOS or PCOD? Are you looking for effective treatment by customized Lifestyle changes and Exercises?</p></div>
+                <div class="query-card"><h5>Fibromyalgia?</h5><p>Do you have Fibromyalgia and have difficulties with daily activities? Are you looking for effective treatment for Fibromyalgia?</p></div>
+                <div class="query-card"><h5>Cervical Spondylosis?</h5><p>Are you suffering from Cervical spondylosis or Neck pain and want to know the correct Exercises?</p></div>
+                <div class="query-card"><h5>Disc or Spine Problems?</h5><p>Are you someone who has Disc or Spine related problem and looking for solution through correct Exercises?</p></div>
+                <div class="query-card"><h5>Post Partum Depression?</h5><p>Do you have Post Partum Depression? Feeling low mood and energy after Delivery?</p></div>
+                <div class="query-card"><h5>Sciatica?</h5><p>Are you suffering from Sciatica? Do you have back pain and leg pain and want to know the effective Exercises?</p></div>
+                <div class="query-card"><h5>Osteoarthritis?</h5><p>Are you suffering from Osteoarthritis? Do you have pain and discomfort while walking and climbing stairs?</p></div>
+                <div class="query-card"><h5>Hysterectomy Pain?</h5><p>Have you undergone Hysterectomy and having Back Pain or Pelvic Pain?</p></div>
+            </div>
+        </section>
+
+        <!-- SPECIAL FOCUS SECTION (Updated from Image) -->
+        <section id="menopause" style="background: var(--bg-sand); border-radius: var(--radius-lg); padding: 60px; border: 2.5px solid #000; margin: 40px 0;">
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <h3 style="margin-bottom: 25px; letter-spacing: -1px;">SPECIAL FOCUS: MENOPAUSE & BONE HEALTH</h3>
+                <p style="font-size: 20px; font-weight: 800; color: #333; margin-bottom: 25px;">"Menopause occurs when a woman stop menstruating at least for a year. During Menopause reproductive hormones decline which result in bone loss."</p>
+                <p style="margin-bottom: 25px;">Research indicates approximately 1 in 3 women over the age of 50 are affected by Osteoporosis worldwide. Weight bearing Exercises along with healthy Lifestyle play a vital role in Strengthening bones. You can easily and effectively do at home.</p>
+                <p>Not only they strengthen your bone and muscles but also it reduces the risk of other disorders. There is no age requirement or restriction for these Exercises.</p>
+            </div>
+        </section>
+
+        <!-- MYTH VS FACT SECTION (Updated from Image) -->
+        <section style="border-bottom:none;">
+            <div class="myth-fact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div style="border: 2.5px solid #000; padding: 40px; border-radius: var(--radius-sm); background: #fee2e2;">
+                    <h4 style="color: #dc2626; font-weight: 900; display: flex; align-items: center; gap: 10px; margin-bottom:15px;">
+                        <i class="fas fa-times" style="font-size: 22px;"></i> MYTH
+                    </h4>
+                    <p style="font-size: 22px; font-weight: 800; color: #1a1a1a;">"It is not safe to Exercise with Diabetes."</p>
+                </div>
+                <div style="border: 2.5px solid #000; padding: 40px; border-radius: var(--radius-sm); background: #d1fae5;">
+                    <h4 style="color: #059669; font-weight: 900; display: flex; align-items: center; gap: 10px; margin-bottom:15px;">
+                        <i class="fas fa-check" style="font-size: 22px;"></i> FACT
+                    </h4>
+                    <p style="font-size: 18px; color: #333;">"Diabetes can only be controlled with help of medicines, Exercise and healthy diet. So, Exercises are highly beneficial for individuals with diabetes."</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="location">
+            <h2 style="text-align: center; margin-bottom: 20px;">Find Us in <span class="highlight">Mangaluru</span></h2>
+            <p style="text-align: center; margin-bottom: 40px;">Balamatta Complex, 2nd Floor, Opposite Juice Junction, Bridge Road, Balmatta, Mangalore, Karnataka 575002</p>
+            <div class="map-section">
+                <iframe width="100%" height="100%" frameborder="0" src="https://maps.google.com/maps?q=Dr.%20Priyanka's%20Physiotherapy%20Clinic%20Balmatta&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+            </div>
+        </section>
+
+        <section id="book">
+            <div class="plan-visit-wrapper">
+                <div>
+                    <h2>Plan Your<br>Visit.</h2>
+                    <p style="margin: 20px 0;">TO BOOK AN APPOINTMENT — Call/WhatsApp us for instant confirmation.</p>
+                    <p style="color: var(--accent-blue); font-weight: 900; font-size: 32px; margin: 30px 0;">+91 90194 57655</p>
+                    <div style="font-size: 16px; color: #888; line-height: 1.8;">
+                        Mon - Fri: 10:00 AM – 8:30 PM<br>
+                        Sat: 10:30 AM – 7:30 PM | Sun: 10:30 AM – 7:00 PM
+                    </div>
+                </div>
+                <div class="visit-form-grid">
+                    <input type="text" id="v_name" placeholder="Full Name">
+                    <input type="tel" id="v_phone" placeholder="Phone Number">
+                    <select id="v_service">
+                        <option>Select Service</option>
+                        <option>Consultation</option>
+                        <option>Maternity Care</option>
+                        <option>Ortho Rehab</option>
+                        <option>PCOS/Infertility</option>
+                    </select>
+                    <input type="date" id="v_date">
+                    <textarea id="v_help" rows="4" placeholder="How can we help?"></textarea>
+                    <button class="btn-blue" onclick="sendToVisitWA()">Book via WhatsApp →</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="woman-acronym">
+                <div><span class="letter">W</span> – Wonderful wife</div>
+                <div><span class="letter">O</span> – Outstanding friend</div>
+                <div><span class="letter">M</span> – Marvelous daughter</div>
+                <div><span class="letter">A</span> – Adorable sister</div>
+                <div><span class="letter">N</span> – Nurturing mother</div>
+            </div>
+        </section>
+
+        <footer style="padding: 60px 0; text-align: center; border-top: 1px solid #eee;">
+            <div class="logo">Dr. Priyanka's Physiotherapy Clinic</div>
+            <p style="margin-top: 20px; font-weight: 700;">Member of Balmatta Medical Association *</p>
+            <p style="margin-top: 10px; font-size: 12px; color: #aaa;">Powered by <span style="color: #a855f7; font-weight: 900;">LuMe Studios</span></p>
+            <p style="margin-top: 40px; color: #aaa; font-size: 11px;">© 2026 Dr. Priyanka Singh. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function openSidebar() {
+            document.getElementById('sidebarDrawer').classList.add('open');
+            document.getElementById('sidebarOverlay').classList.add('open');
+        }
+        function closeSidebar() {
+            document.getElementById('sidebarDrawer').classList.remove('open');
+            document.getElementById('sidebarOverlay').classList.remove('open');
+        }
+
+        function sendToVisitWA() {
+            const name = document.getElementById('v_name').value;
+            const phone = document.getElementById('v_phone').value;
+            const service = document.getElementById('v_service').value;
+            const date = document.getElementById('v_date').value;
+            const help = document.getElementById('v_help').value;
+
+            if(!name || !phone) { alert("Please fill Name and Phone."); return; }
+
+            const message = `*Plan Your Visit - Dr. Priyanka Singh*%0A--------------------------%0APatient: ${name}%0APhone: ${phone}%0AService: ${service}%0ADate: ${date}%0AConcern: ${help}%0A--------------------------%0AHi, I'd like to book an appointment.`;
+            window.open(`https://wa.me/919019457655?text=${message}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
+
